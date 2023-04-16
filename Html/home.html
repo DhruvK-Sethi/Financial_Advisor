@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="../bootstrap-5.3.0-alpha3-dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../Scripts/home.css" rel="stylesheet">
+  <link rel="stylesheet" href="../bootstrap-5.3.0-alpha3-dist/css/">
+  <style>
+    #bg {
+      height: 550px;
+      display: block;
+      background-color: #808;
+      background-image:
+        url("../resources/bg.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom center, 50%, 50%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <bg id="bg">
+
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li>
+              <div id="wrapper">
+                <div class="overlay"></div>
+
+                <!-- Sidebar -->
+                <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+                  <ul class="nav sidebar-nav">
+                    <div class="sidebar-header">
+                      <div class="sidebar-brand">
+                        <a href="#">Brand</a>
+                      </div>
+                    </div>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li class="dropdown">
+                      <a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works <span
+                          class="caret"></span></a>
+                      <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                        <div class="dropdown-header">Dropdown heading</div>
+                        <li><a href="#pictures">Pictures</a></li>
+                        <li><a href="#videos">Videeos</a></li>
+                        <li><a href="#books">Books</a></li>
+                        <li><a href="#art">Art</a></li>
+                        <li><a href="#awards">Awards</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#followme">Follow me</a></li>
+                  </ul>
+                </nav>
+                <!-- /#sidebar-wrapper -->
+
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                  <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                    <span class="hamb-top"></span>
+                    <span class="hamb-middle"></span>
+                    <span class="hamb-bottom"></span>
+                  </button>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-8 col-lg-offset-2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+            <li class="nav-item d-flex mx-auto" role="search">
+              <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search"
+                style="width: 350px;">
+              <button class="btn"><i class="fa fa-search"></i></button>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <a class="navbar-brand" href="#">
+              <img src="../resources/logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </bg>
+
+  </nav>
+  <script src="../Scripts/home.js"></script>
+  <script src="../bootstrap-5.3.0-alpha3-dist/js/owl.carousel.min.js"></script>
+  <script src="../bootstrap-5.3.0-alpha3-dist/js/popper.min.js"></script>
+</body>
+
+</html>

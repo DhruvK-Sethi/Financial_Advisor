@@ -7,17 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link href="../bootstrap-5.3.0-alpha3-dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="../Scripts/home.css" rel="stylesheet">
   <link rel="stylesheet" href="../bootstrap-5.3.0-alpha3-dist/css/">
   <style>
     #bg {
-      height: 550px;
+      height: 560px;
       display: block;
       background-color: #808;
       background-image:
         url("../resources/bg.webp");
-      background-repeat: no-repeat;
+      background-repeat: repeat-x;
       background-size: cover;
       background-position: bottom center, 50%, 50%;
     }
@@ -34,57 +35,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li>
-              <div id="wrapper">
-                <div class="overlay"></div>
-
-                <!-- Sidebar -->
-                <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
-                  <ul class="nav sidebar-nav">
-                    <div class="sidebar-header">
-                      <div class="sidebar-brand">
-                        <a href="#">Brand</a>
-                      </div>
-                    </div>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li class="dropdown">
-                      <a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works <span
-                          class="caret"></span></a>
-                      <ul class="dropdown-menu animated fadeInLeft" role="menu">
-                        <div class="dropdown-header">Dropdown heading</div>
-                        <li><a href="#pictures">Pictures</a></li>
-                        <li><a href="#videos">Videeos</a></li>
-                        <li><a href="#books">Books</a></li>
-                        <li><a href="#art">Art</a></li>
-                        <li><a href="#awards">Awards</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#followme">Follow me</a></li>
+              <div class="wrapper">
+                <input type="checkbox" id="btn" hidden>
+                <label for="btn" class="menu-btn">
+                  <i class="fas fa-bars"></i>
+                  <i class="fas fa-times"></i>
+                </label>
+                <nav id="sidebar">
+                  <div class="title">
+                    Contents
+                  </div>
+                  <ul class="list-items">
+                    <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-sliders-h"></i>Tax Optimization</a></li>
+                    <li><a href="#"><i class="fas fa-address-book"></i>Retierment Planning</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i>Investment Goals</a></li>
+                    <li><a href="#"><i class="fas fa-stream"></i>Manage Investment</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Investment Calculator</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Manage Portfolio</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>Asset Utilization</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i>About Us</a></li>
                   </ul>
                 </nav>
-                <!-- /#sidebar-wrapper -->
-
-                <!-- Page Content -->
-                <div id="page-content-wrapper">
-                  <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
-                    <span class="hamb-top"></span>
-                    <span class="hamb-middle"></span>
-                    <span class="hamb-bottom"></span>
-                  </button>
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-lg-8 col-lg-offset-2">
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </li>
           </ul>
+
+
+
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
             <li class="nav-item d-flex mx-auto" role="search">

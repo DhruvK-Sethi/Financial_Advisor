@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asset Allocation</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			// allocation percentages
+			var domestic_equity = 60;
+			var us_equity = 10;
+			var gold = 5;
+			var debt = 15;
+			var crypto = 5;
+			var reits = 5;
+
+			// data for pie chart
+			var data = google.visualization.arrayToDataTable([
+				['Asset Class', 'Percentage'],
+				['Domestic Equity', domestic_equity],
+				['US Equity', us_equity],
+				['Gold', gold],
+				['Debt', debt],
+				['Crypto', crypto],
+				['Reits', reits]
+			]);
+
+			// options for pie chart
+			var options = {
+				title: 'Investment Allocation',
+				pieHole: 0.2,
+				slices: {
+					0: { color: 'blue' },
+					1: { color: 'orange' },
+					2: { color: 'green' },
+					3: { color: 'red' },
+					4: { color: 'pink' },
+					5: { color: 'yellow' }
+				},
+				width: 500,
+				height: 500
+			};
+
+			// create pie chart object
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+			// draw the chart
+			chart.draw(data, options);
+		}
+	</script>
+</head>
+<body>
+	<div id="chart_div"></div>
+</body>
+</html>

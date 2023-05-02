@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Interactive Pie Chart</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/chart.js') }}"></script>
+</head>
+
+<body>
+    <div id="chart_div"></div>
+    <form>
+        <label>Domestic Equity:</label>
+        <input type="number" id="domestic" value="60" min="0" max="100" oninput="updateChart()"><br>
+        <label>US Equity:</label>
+        <input type="number" id="us" value="10" min="0" max="100" oninput="updateChart()"><br>
+        <label>Gold:</label>
+        <input type="number" id="gold" value="5" min="0" max="100" oninput="updateChart()"><br>
+        <label>Debt:</label>
+        <input type="number" id="debt" value="15" min="0" max="100" oninput="updateChart()"><br>
+        <label>Crypto:</label>
+        <input type="number" id="crypto" value="5" min="0" max="100" oninput="updateChart()"><br>
+        <label>REITs:</label>
+        <input type="number" id="reits" value="5" min="0" max="100" oninput="updateChart()"><br>
+    </form>
+    <script src="chart.js"></script>
+</body>
+
+</html>

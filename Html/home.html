@@ -116,11 +116,28 @@
         </tbody>
       </table> -->
     <div class="body-content"></div>
-    <div class="row1"><img src="../resources/money_minded.png" alt="money_minded"></div>
+    <div class="row1"><img src="../resources/money_minded.png" alt="money_minded" style="max-width: 100%;"></div>
     <div class="row2">
       <div class="row2_col1">
         <div class="row2_col1_row1">row2_col1_row1</div>
-        <div class="row2_col1_row2">row2_col1_row2</div>
+        <div class="row2_col1_row2" id="myChart_1">Goals <br>
+          <form>
+            <label>Domestic Equity:</label>
+            <input type="number" id="domestic" value="60" min="0" max="100" oninput="updateChart()"><br>
+            <label>US Equity:</label>
+            <input type="number" id="us" value="10" min="0" max="100" oninput="updateChart()"><br>
+            <label>Gold:</label>
+            <input type="number" id="gold" value="5" min="0" max="100" oninput="updateChart()"><br>
+            <label>Debt:</label>
+            <input type="number" id="debt" value="15" min="0" max="100" oninput="updateChart()"><br>
+            <label>Crypto:</label>
+            <input type="number" id="crypto" value="5" min="0" max="100" oninput="updateChart()"><br>
+            <label>REITs:</label>
+            <input type="number" id="reits" value="5" min="0" max="100" oninput="updateChart()"><br>
+          </form>
+          <script src="../Scripts/home.js"></script>
+        </div>
+
         <div class="row2_col1_row3">row2_col1_row3</div>
       </div>
       <div class="row2_col2"></div>
@@ -130,7 +147,6 @@
   </bg>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../Scripts/home.js"></script>
   <script src="../bootstrap-5.3.0-alpha3-dist/js/owl.carousel.min.js"></script>
   <script src="../bootstrap-5.3.0-alpha3-dist/js/popper.min.js"></script>
 </body>

@@ -27,12 +27,12 @@ def signup():
         if username and password:
             cipher = AES.new(privatekey, AES.MODE_EAX)
 
-            ciphertext, tag = cipher.encrypt_and_digest(password)
+            ciphertext, tag = cipher.encrypt_and_digest(password.encode())
 
             # Get the nonce and update the cipher object
             nonce = cipher.nonce
             cipher = AES.new(privatekey, AES.MODE_EAX, nonce=nonce)
-            password_hashed = cipher
+            password_hashed = ciphertext.hex()
             conn = sqlite3.connect("signup.db")
             c = conn.cursor()
             conn.execute('''CREATE TABLE IF NOT EXISTS personsdata
@@ -41,11 +41,13 @@ def signup():
                   password TEXT NOT NULL,
                   privatekey TEXT NOT NULL);''')
             conn.execute("INSERT INTO personsdata (username, password, privatekey) VALUES (?, ?, ?)",
-                         (username, password_hashed, privatekey))
+                         (username, password_hashed, privatekey.hex()))
             conn.commit()
             conn.close()
-            msg = "You have successfully signed up! Your private key is: {}".format(
-                privatekey)
+            decrypted_data = cipher.decrypt_and_verify(ciphertext, tag)
+            
+
+            msg = "You have successfully signed up! Your private key is: {}".format(bytes.fromhex(privatekey.decode()))
         else:
             msg = "Please enter both username and password"
     return render_template("signup.html", msg=msg)

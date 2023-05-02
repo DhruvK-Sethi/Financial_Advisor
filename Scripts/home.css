@@ -177,6 +177,89 @@
 }
 
 #myCanvas {
-    width: 50px;
-    height: 50px;
+    width: 10%;
+    height: 10%;
+}
+
+.body-content {
+    display: flex;
+}
+.row1 {
+    float: left;
+    flex-grow: 1;
+    background-color: #c2c2c2;
+    height: 100%;
+    width: 6%;
+    
+}
+.row2 {
+    float: left;
+    flex-grow: 1;
+    height: 100%;
+    width: 94%;
+}
+.row2_col1 {
+    float: left;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 1em;
+}
+.row2_col1_row1 {
+    float: left;
+    width: calc(33.33% - 20px);
+    height: 100%;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.row2_col1_row2 {
+    float: left;
+    width: calc(33.33% - 20px);
+    height: 100%;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.row2_col1_row3 {
+    float: left;
+    width: calc(33.33% - 20px);
+    height: 100%;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+.row2_col2 {
+    float: left;
+    width: calc(100% - 20px);
+    height: 50%;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    margin-left: 0.5em;
+    
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

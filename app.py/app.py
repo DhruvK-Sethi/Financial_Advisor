@@ -27,7 +27,7 @@ def signup():
         if username and password:
             cipher = AES.new(privatekey, AES.MODE_EAX)
 
-            ciphertext, tag = cipher.encrypt_and_digest(password.encode())
+            ciphertext, tag = cipher.encrypt_and_digest(password.encode('utf-8'))
 
             # Get the nonce and update the cipher object
             nonce = cipher.nonce
@@ -47,7 +47,7 @@ def signup():
             decrypted_data = cipher.decrypt_and_verify(ciphertext, tag)
             
 
-            msg = "You have successfully signed up! Your private key is: {}".format(bytes.fromhex(privatekey.decode()))
+            msg = "You have successfully signed up! Your private key is: {}".format(bytes.fromhex(privatekey.hex()))
         else:
             msg = "Please enter both username and password"
     return render_template("signup.html", msg=msg)

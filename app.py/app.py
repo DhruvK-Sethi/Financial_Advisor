@@ -6,9 +6,10 @@ import secrets
 app = Flask(__name__)
 app.secret_key = "mysecretkey"
 
+
 @app.route("/")
 def landing():
-	return render_template("landing.html")
+    return render_template("landing.html")
 
 
 # Signup function
@@ -28,10 +29,12 @@ def signup():
                   username TEXT NOT NULL,
                   password TEXT NOT NULL,
                   privatekey TEXT NOT NULL);''')
-            conn.execute("INSERT INTO personsdata (username, password, privatekey) VALUES (?, ?, ?)", (username, password_hashed, privatekey))
+            conn.execute("INSERT INTO personsdata (username, password, privatekey) VALUES (?, ?, ?)",
+                         (username, password_hashed, privatekey))
             conn.commit()
             conn.close()
-            msg = "You have successfully signed up! Your private key is: {}".format(privatekey)
+            msg = "You have successfully signed up! Your private key is: {}".format(
+                privatekey)
         else:
             msg = "Please enter both username and password"
     return render_template("signup.html", msg=msg)
@@ -47,7 +50,8 @@ def login():
         if username and privatekey:
             conn = sqlite3.connect("signup.db")
             c = conn.cursor()
-            c.execute("SELECT * FROM personsdata WHERE username = ? AND privatekey = ?", (username, privatekey))
+            c.execute(
+                "SELECT * FROM personsdata WHERE username = ? AND privatekey = ?", (username, privatekey))
             r = c.fetchone()
             conn.close()
             if r:
@@ -67,18 +71,21 @@ def logout():
     session.pop("username", None)
     return redirect(url_for("home"))
 
+
 @app.route("/dashboard")
 def dashboard():
-	if "loggedin" in session:
-		conn = sqlite3.connect("signup.db")
-		c = conn.cursor()
-		c.execute("SELECT privatekey FROM personsdata WHERE username = ?", (session["username"],))
-		privatekey = c.fetchone()[0]
-		conn.close()
-		return render_template("dashboard.html", username=session["username"], privatekey=privatekey)
-	else:
-		return redirect(url_for("login"))
-	
+    if "loggedin" in session:
+        conn = sqlite3.connect("signup.db")
+        c = conn.cursor()
+        c.execute("SELECT privatekey FROM personsdata WHERE username = ?",
+                  (session["username"],))
+        privatekey = c.fetchone()[0]
+        conn.close()
+        return render_template("dashboard.html", username=session["username"], privatekey=privatekey)
+    else:
+        return redirect(url_for("login"))
+
+
 @app.route('/fill_details', methods=['GET', 'POST'])
 def fill_details():
     if request.method == 'POST':
@@ -97,24 +104,13 @@ def fill_details():
         age = request.form['age']
         salary = request.form['salary']
         monthlyexpend = request.form['monthlyexpend']
-        conn.execute("INSERT INTO user_details (name, email, phone, age, salary, monthlyexpend) VALUES (?, ?, ?, ?, ?, ?)", (name, email, phone, age, salary, monthlyexpend))
+        conn.execute("INSERT INTO user_details (name, email, phone, age, salary, monthlyexpend) VALUES (?, ?, ?, ?, ?, ?)",
+                     (name, email, phone, age, salary, monthlyexpend))
         conn.commit()
         conn.close()
         return redirect('/dashboard')
     return render_template('fill_details.html')
 
-	
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-	
-
-
-
-
-

@@ -2,8 +2,10 @@ var ctx_1 = document.getElementById('myChart_1').getContext('2d');
 var ctx_2 = document.getElementById('myChart_2').getContext('2d');
 var myChart = new Chart(ctx_1, {
     type: 'doughnut',
+    // options: 'maintainAspectRatio',
     data: {
         // labels: ['Blue'],
+        
         datasets: [{
             data: [100,30],
             backgroundColor: [   

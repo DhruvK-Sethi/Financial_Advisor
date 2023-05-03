@@ -211,33 +211,40 @@
     float: left;
     width: calc(33.33% - 20px);
     height: 100%;
-   
+    text-align: center;
     border: 2px solid #000000;
     border-radius: 25px;
     margin-right: 0.5em;
     margin-left: 0.5em;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .row2_col1_row2 {
     float: left;
     width: calc(33.33% - 20px);
     height: 100%;
- 
+    text-align: center;
     border: 2px solid #000000;
     border-radius: 25px;
     margin-right: 0.5em;
     margin-left: 0.5em;
+    overflow: hidden;
+    max-height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .row2_col1_row3 {
     float: left;
     width: calc(33.33% - 20px);
     height: 100%;
- 
+    text-align: center;
     border: 2px solid #000000;
     border-radius: 25px;
     margin-right: 0.5em;
     margin-left: 0.5em;
+    overflow: hidden;
+    max-height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .row2_col2 {
     float: left;
@@ -267,8 +274,3 @@
     background: #555;
 }
 
-#myChart_1 {
-    width: 400px;
-    height: 400px;
-    display: flex;
-}

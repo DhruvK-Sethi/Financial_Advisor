@@ -65,6 +65,7 @@
   overflow: hidden;
   left: -300px;
   transition: all 0.3s ease;
+  z-index: 999;
 }
 
 #btn:checked ~ #sidebar {

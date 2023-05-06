@@ -1,113 +1,59 @@
-// var ctx_1 = document.getElementById('myChart_1').getContext('2d');
-// var ctx_2 = document.getElementById('myChart_2').getContext('2d');
-// var myChart = new Chart(ctx_1, {
-//     type: 'doughnut',
-//     options: 'maintainAspectRatio',
-//     data: {
-//         // labels: ['Blue'],
-        
-//         datasets: [{
-//             data: [100,30],
-//             backgroundColor: [   
-//                 'rgba(255, 99, 132, 0.8)',
-//                 'rgba(54, 162, 235, 0.8)'                
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)'               
-//             ],
-//             borderWidth: 1,
-            
-//         }]
-//     },
-//     options: {
-//         cutoutPercentage: 30,
-//         legend: {
-//             display: true,
-//             position: 'top'
-//         },
-//         responsive: false,
-//         maintainAspectRatio: true
-//     }
-// });
-// var myChart = new Chart(ctx_2, {
-//     type: 'doughnut',
-//     data: {
-//         // labels: ['Blue'],
-//         datasets: [{
-//             data: [100,70],
-//             backgroundColor: [   
-//                 'rgba(255, 20, 132, 0.8)',
-//                 'rgba(154, 160, 235, 0.8)'                
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)'               
-//             ],
-//             borderWidth: 1,
-            
-//         }]
-//     },
-//     options: {
-//         cutoutPercentage: 30,
-//         legend: {
-//             display: true,
-//             position: 'top'
-//         },
-//         responsive: false,
-//         maintainAspectRatio: true
-//     }
-// });
+const expenses = [
+  {
+    date: { day: "Friday", month: "August", date: "25" },
+    details: "Income Tax",
+    amount: "Rs. 80,000"
+  },
+  {
+    date: { day: "Saturday", month: "September", date: "09" },
+    details: "Rent",
+    amount: "Rs. 15,000"
+  },
+  {
+    date: { day: "Saturday", month: "September", date: "09" },
+    details: "Cable Tv",
+    amount: "Rs. 1,500"
+  }
+];
 
+const container = document.getElementById("row2_col2");
 
-// google.charts.load('current', {'packages':['corechart']});
-// google.charts.setOnLoadCallback(drawChart);
+for (let i = 0; i < expenses.length; i++) {
+  const expense = expenses[i];
+  const div = document.createElement("div");
+  div.classList.add("row2_col2_col1");
 
-// function drawChart() {
-//     // allocation percentages
-//     var domestic_equity = parseInt(document.getElementById('domestic').value);
-//     var us_equity = parseInt(document.getElementById('us').value);
-//     var gold = parseInt(document.getElementById('gold').value);
-//     var debt = parseInt(document.getElementById('debt').value);
-//     var crypto = parseInt(document.getElementById('crypto').value);
-//     var reits = parseInt(document.getElementById('reits').value);
+  const dateSection = document.createElement("section");
+  dateSection.classList.add("fp_date");
 
-//     // data for pie chart
-//     var data = google.visualization.arrayToDataTable([
-//         ['Asset Class', 'Percentage'],
-//         ['Domestic Equity', domestic_equity],
-//         ['US Equity', us_equity],
-//         ['Gold', gold],
-//         ['Debt', debt],
-//         ['Crypto', crypto],
-//         ['REITs', reits]
-//     ]);
+  const time = document.createElement("time");
+  time.classList.add("icon");
 
-//     // options for pie chart
-//     var options = {
-//         title: 'Investment Allocation',
-//         pieHole: 0.2,
-//         slices: {
-//             0: { color: 'blue' },
-//             1: { color: 'orange' },
-//             2: { color: 'green' },
-//             3: { color: 'red' },
-//             4: { color: 'pink' },
-//             5: { color: 'yellow' }
+  const em = document.createElement("em");
+  em.textContent = expense.date.day;
 
-//         },
-//         width: 500,
-//         height: 500
+  const strong = document.createElement("strong");
+  strong.textContent = expense.date.month;
 
-//     };
+  const span = document.createElement("span");
+  span.textContent = expense.date.date;
 
-//     // create pie chart object
-//     var chart = new google.visualization.PieChart(document.getElementById('myChart_1'));
+  time.appendChild(em);
+  time.appendChild(strong);
+  time.appendChild(span);
+  dateSection.appendChild(time);
 
-//     // draw the chart
-//     chart.draw(data, options);
-// }
+  const detailsSection = document.createElement("section");
+  detailsSection.classList.add("fp_details");
+  detailsSection.textContent = expense.details;
 
-// function updateChart() {
-//     drawChart();
-// }
+  const amountSection = document.createElement("section");
+  amountSection.classList.add("fp_entry");
+  amountSection.textContent = expense.amount;
+
+  div.appendChild(dateSection);
+  div.appendChild(detailsSection);
+  div.appendChild(amountSection);
+
+  container.appendChild(div);
+}
